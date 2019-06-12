@@ -18,8 +18,10 @@ options.add_argument('--disable-gpu')
 options.add_argument('--no-sandbox')
 options.headless = True
 
+print('Building chrome driver...')
 driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
 
+print('Starting app...')
 app = Flask(__name__)
 CORS(app)
 
@@ -46,11 +48,13 @@ def index():
 @app.route("/api/scrape", methods=['POST'])
 def scrape():
     url = request.json.get('url')
+    print(url)
     element = scrape_amazon_price(url)
 
     status = 200 if element is not None else 412
+    response = json.dumps({'Price': element})
 
-    return Response(json.dump({'Price': element}, status=status, mimetype='application/json'))
+    return Response(response=response, status=status, mimetype='application/json')
 
 
 if __name__ == '__main__':
