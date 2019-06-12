@@ -1,4 +1,4 @@
-# Selenium-Heroku-Python-POC
+# Selenium-Heroku-Python-API-POC
 A simple Amazon Web Scraper proof of concept using Selenium inside a Python application and deployed on Heroku
 
 
