@@ -43,7 +43,7 @@ def index():
     return 'Scraper alive!'
 
 
-@app.route("/api/scrape", method=['POST'])
+@app.route("/api/scrape", methods=['POST'])
 def scrape():
     url = request.json.get('url')
     element = scrape_amazon_price(url)
@@ -51,3 +51,7 @@ def scrape():
     status = 200 if element is not None else 412
 
     return Response(json.dump({'Price': element}, status=status, mimetype='application/json'))
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
