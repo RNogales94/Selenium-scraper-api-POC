@@ -29,7 +29,7 @@ Reference https://swethatanamala.github.io/2018/09/01/web-scraping-using-python-
 
 ## Heroku requirements (only for deployment)
 #### Environment variables
-CHROMEDRIVER_PATH = /app/.chromedriver/bin/chromedriver
+CHROMEDRIVER_PATH = /app/.chromedriver/bin/chromedriver  
 GOOGLE_CHROME_BIN = /app/.apt/usr/bin/google-chrome
 
 ![](./imgs/buildpacks.png)
